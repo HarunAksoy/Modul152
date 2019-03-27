@@ -24,7 +24,7 @@ app.post('/api/file', function (req, res) {
                 else {
                     res.send('Successful: You can find the picture under https://h-152.herokuapp.com/files/' + req.file.originalname + ' ' + 'PS: put in front of the filename (small_, medium_ or big_) to see the picture in different sizes' );
                     gm(req.file.path)
-                        .resize(720, null)
+                        .resize(720, 720)
                         .write('./uploads/files/' + 'small_' + req.file.originalname, function (err) {
                             if (err) {
                                 res.render('index', {
@@ -33,7 +33,7 @@ app.post('/api/file', function (req, res) {
                             }
                         });
                     gm(req.file.path)
-                        .resize(1280, null)
+                        .resize(1280, 1280)
                         .write('./uploads/files/' + 'medium_' + req.file.originalname, function (err) {
                             if (err) {
                                 res.render('index', {
@@ -42,7 +42,7 @@ app.post('/api/file', function (req, res) {
                             }
                         });
                     gm(req.file.path)
-                        .resize(1920, null)
+                        .resize(1920, 1920)
                         .write('./uploads/files/' + 'big_' + req.file.originalname, function (err) {
                             if (err) {
                                 res.render('index', {
