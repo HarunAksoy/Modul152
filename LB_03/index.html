@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>Images</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+</head>
+
+<style>
+    .text-center{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 25%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 25px;
+
+    }
+
+    .card.light-version .file-field input[type=text] {
+        border-bottom: 1px solid #fff; }
+    .card.light-version .file-field input[type=text]::-webkit-input-placeholder {
+        color: #fff;
+        font-weight: 300; }
+    .card.light-version .file-field input[type=text]::-moz-placeholder {
+        color: #fff;
+        font-weight: 300; }
+    .card.light-version .file-field input[type=text]:-ms-input-placeholder {
+        color: #fff;
+        font-weight: 300; }
+    .card.light-version .file-field input[type=text]::placeholder {
+        color: #fff;
+        font-weight: 300; }
+    .card.light-version .file-field input[type=text]:focus:not([readonly]) {
+        -webkit-box-shadow: 0 1px 0 0 #fff;
+        box-shadow: 0 1px 0 0 #fff; }
+    .card.light-version .file-field input[type=text].valid {
+        border-bottom: 1px solid #00c851;
+        -webkit-box-shadow: 0 1px 0 0 #00c851;
+        box-shadow: 0 1px 0 0 #00c851; }
+    .card.light-version .file-field input[type=text]:focus.valid {
+        border-bottom: 1px solid #00c851;
+        -webkit-box-shadow: 0 1px 0 0 #00c851;
+        box-shadow: 0 1px 0 0 #00c851; }
+</style>
+
+<body style="background: #fff;">
+<!--Card-->
+<nav class="navbar navbar-dark primary-color">
+    <a class="navbar-brand" href="#">LB_02</a>
+</nav>
+<div class="text-center card indigo text-center z-depth-2 light-version py-4 px-5">
+
+    <form class="md-form" action="#">
+        <div class="file-field">
+            <div style="margin-bottom: 50px;" class="btn btn-outline-white waves-effect btn-sm float-left">
+                <span>Choose file<i class="fas fa-cloud-upload-alt ml-3" aria-hidden="true"></i></span>
+                <input type="file">
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate text-white" type="text" placeholder="Upload your file" disabled>
+            </div>
+        </div>
+    </form>
+
+    <hr class="w-100 my-4">
+
+    <form class="md-form" action="#">
+        <div class="file-field">
+            <div style="margin-bottom: 50px;" class="btn btn-outline-white btn-rounded waves-effect btn-sm float-left">
+                <span>Choose files<i class="fas fa-cloud-upload-alt ml-3" aria-hidden="true"></i></span>
+                <input type="file" multiple>
+            </div>
+            <div class="file-path-wrapper">
+                <input class="file-path validate text-white" type="text" placeholder="Upload one or more files" disabled>
+            </div>
+        </div>
+    </form>
+
+</div>
+<!--/.Card-->
+
+</body>
+</html>
