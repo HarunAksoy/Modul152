@@ -1,0 +1,99 @@
+<html lang="de">
+<head>
+    <title>Player</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.5/css/mdb.min.css" rel="stylesheet">
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+<style>
+    .centered {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        width: 45%;
+        border-radius: 25px;
+
+    }
+
+
+    body {
+        background-color: black;
+    }
+
+</style>
+
+
+<body>
+
+<div class="centered">
+<video id="video" width="640p%" height="480px" autoplay>
+    <source src="../public/videos/merged/<%=name %>" type="video/mp4">
+    <source src="movie.ogg" type="video/ogg">
+    Your browser does not support the video tag.
+</video>
+<div class="bottom">
+    <button><i class="fas fa-play" onclick="playPause()"></i></button>
+    <button><i class="fas fa-forward" onclick="setPlaySpeed1()"></i>x1</button>
+    <button><i class="fas fa-forward" onclick="setPlaySpeed15()"></i>x1.5</button>
+    <button><i class="fas fa-forward" onclick="setPlaySpeed2()"></i>x2</button>
+    <button><i class="fas fa-expand" onclick="makeBig()"></i></button>
+    <button><i class="fas fa-volume-up" onclick="loud()"></i></button>
+    <button><i class="fas fa-volume-mute" onclick="mute()"></i></button>
+</div>
+</div>
+
+<script>
+
+    var video = document.getElementById('video')
+
+    function playPause() {
+        if (video.paused)
+            video.play();
+        else
+            video.pause();
+    }
+
+    function makeBig() {
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) {
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) {
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) {
+            video.msRequestFullscreen();
+        }
+    }
+    function setPlaySpeed1() {
+        video.playbackRate = 1;
+    }
+
+    function setPlaySpeed15() {
+        video.playbackRate = 1.5;
+    }
+
+    function setPlaySpeed2() {
+        video.playbackRate = 2;
+    }
+
+    function mute() {
+        video.muted = true;
+    }
+
+    function loud() {
+        video.muted = false;
+    }
+
+</script>
+</body>
+
+</html>
