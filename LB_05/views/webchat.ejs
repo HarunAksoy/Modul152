@@ -167,6 +167,7 @@
         else {
             username.disabled = true;
             exampleSocket.send(username.value.fontcolor('blue') + ': ' + content.value);
+            $('#content').froalaEditor('html.set', '');
         }
 
     })
